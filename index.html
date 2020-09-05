@@ -4,31 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | IP Address Tracker</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  IP Address Tracker
-
-  Search for any IP address or domain
-
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
+  <header class="header">
+    <h1 class="header__title">IP Address Tracker</h1>
+    <form class="search-form">
+      <input
+        type="search"
+        class="search-form__input"
+        placeholder="Search for any IP address or domain"
+        name="q">
+        <button
+          class="search-form__button"
+          type="button">
+          <img src="./images/icon-arrow.svg" alt="">
+        </button>
+    </form>
+    <div class="display">
+      <div class="display__box" id="ip-address">
+        <div class="display__title">IP Address</div>
+        <div class="display__data"></div>
+      </div>
+      <div class="display__box" id="location">
+        <div class="display__title">Location</div>
+        <div class="display__data"></div>
+      </div>
+      <div class="display__box" id="timezone">
+        <div class="display__title">Timezone</div>
+        <div class="display__data"></div>
+      </div>
+      <div class="display__box" id="isp">
+        <div class="display__title">Isp</div>
+        <div class="display__data"></div>
+      </div>
+    </div>
+  </header>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
+
+<!--
+  UTC  --- add offset value dynamically using the API ---
+
+-->
+
+<!-- <div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Your Name Here</a>.
+</div> -->

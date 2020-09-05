@@ -1,8 +1,15 @@
 @import "abstracts/mixins";
-@import "abstracts/animations";
+@import "abstracts/variables";
 
 @import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
 
 @import "components/attribution";
+@import "components/search-form";
+@import "components/display";
 
-@import "layout/layout";
+@import "layout/header";
+
+@import "pages/home";
