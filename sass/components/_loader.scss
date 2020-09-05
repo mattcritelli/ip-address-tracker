@@ -1,0 +1,28 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba($color-white, 0.7);
+  display: none;
+
+  &__graphic {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 15rem;
+    width: 15rem;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #5D5D5D;
+  }
+}
