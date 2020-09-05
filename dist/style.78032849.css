@@ -1,0 +1,115 @@
+/*
+MEDIA QUERY MANAGER
+0 - 600:       Mobile
+600 - 900:     Tablet (portrait)
+900 - 1200:    Tablet (landscape)
+[1200 - 1800]: Default styles apply
+1800+:         Large Desktop
+
+$breakpoint argument options:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+
+  1em = 16px
+*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100vw; }
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  color: #000; }
+
+h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  padding: 3rem 0; }
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); }
+  .attribution a {
+    color: #3e52a3; }
+
+.search-form {
+  width: 70%;
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  overflow: hidden; }
+  .search-form__input {
+    flex: 1 0 auto;
+    height: 5.8rem;
+    padding: 0 2rem;
+    cursor: pointer; }
+  .search-form__button {
+    border: none;
+    flex: 0 0 5.8rem;
+    width: 5.8rem;
+    background-color: #000;
+    cursor: pointer; }
+    .search-form__button:hover {
+      background-color: #3F3F3F; }
+
+.display {
+  width: 90%;
+  max-width: 111rem;
+  background-color: #fff;
+  border-radius: 20px;
+  height: 16.1rem;
+  margin: 4rem auto;
+  display: flex;
+  padding: 3rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1); }
+  .display__box {
+    flex: 0 1 25%; }
+    .display__box:not(:first-child) {
+      padding-left: 3rem;
+      border-left: 1px solid #DADADA; }
+  .display__title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #959595;
+    padding-bottom: 1rem; }
+  .display__data {
+    font-weight: 500;
+    font-size: 2.6rem;
+    text-transform: capitalize;
+    color: #2C2C2C; }
+
+.header {
+  background-image: url(/pattern-bg.17dea9c4.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 35vh; }
+
+
+/*# sourceMappingURL=/style.78032849.css.map */

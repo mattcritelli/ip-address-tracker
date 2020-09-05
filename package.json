@@ -4,12 +4,17 @@
   "description": "![Design preview for the Coding Bootcamp Testimonials Slider coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "dev": "parcel index.html",
+    "start": "npm-run-all --parallel devserver watch:sass"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node-sass": "^4.14.1"
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5"
   }
 }

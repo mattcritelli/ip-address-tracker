@@ -12,36 +12,41 @@
   <header class="header">
     <h1 class="header__title">IP Address Tracker</h1>
     <form class="search-form">
+      <label for="site-search"></label>
       <input
-        type="search"
+        type="text"
+        id="site-search"
         class="search-form__input"
         placeholder="Search for any IP address or domain"
         name="q">
         <button
           class="search-form__button"
-          type="button">
+          id="search-btn"
+          type="submit">
           <img src="./images/icon-arrow.svg" alt="">
         </button>
     </form>
     <div class="display">
-      <div class="display__box" id="ip-address">
+      <div class="display__box">
         <div class="display__title">IP Address</div>
-        <div class="display__data">192.212.174.101</div>
+        <div class="display__data" id="ip-address">192.212.174.101</div>
       </div>
-      <div class="display__box" id="location">
+      <div class="display__box">
         <div class="display__title">Location</div>
-        <div class="display__data">Brooklyn, NY</div>
+        <div class="display__data" id="location">Brooklyn, NY</div>
       </div>
-      <div class="display__box" id="timezone">
+      <div class="display__box">
         <div class="display__title">Timezone</div>
-        <div class="display__data">UTC -5:00</div>
+        <div class="display__data" id="timezone">UTC -5:00</div>
       </div>
-      <div class="display__box" id="isp">
+      <div class="display__box">
         <div class="display__title">Isp</div>
-        <div class="display__data">SpaceX</div>
+        <div class="display__data" id="isp">SpaceX</div>
       </div>
     </div>
   </header>
+  <script src="scripts/api.js"></script>
+  <script src="scripts/search.js"></script>
   
 </body>
 </html>
