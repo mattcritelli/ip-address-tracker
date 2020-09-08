@@ -1,7 +1,4 @@
-import { loadMap, updateMap } from './map.js';
-
-// Default IP
-// let ipAddress = '8.8.8.8';
+import { setMap } from './map.js';
 
 // DOM SELECTORS
 const ipEl = document.querySelector('#ip-address');
@@ -15,50 +12,43 @@ searchBtn.addEventListener('click', function (e) {
   e.preventDefault();
   const seachText = document.querySelector('#site-search').value;
   findLocation(seachText);
-})
-
-// FETCH USER IP ON PAGE LOAD
-async function fetchUserIP() {
-  const ipApi = 'https://api.ipify.org/?format=json'
-  const response = await fetch(ipApi);
-  const ipData = await response.json();
-  return ipData.ip;
-}
-
-// FETCH LOCATION DATA BASED ON USER SEARCH
-async function fetchIPLocData(ip, callback, initialLoad) {
-  const apiUrl = `https://geo.ipify.org/api/v1?apiKey=${apiKey}&domain=${ip}`;
-  const response = await fetch(apiUrl);
-  const data = await response.json();
-  callback(data, initialLoad)
-}
+});
 
 // UPDATE UI WITH API RESPONSE
-function updateDisplayWithResponse({ location, isp, ip }, initialLoad) {
+function updateDisplayWithResponse({ location, isp, ip }) {
   ipEl.innerText = ip;
   locationEl.innerText = `${location.city}, ${location.region} ${location.postalCode} `;
   timezoneEl.innerText = `${location.timezone} UTC`;
   ispEl.innerText = isp;
 
-  if (initialLoad) {
-    loadMap(location.lat, location.lng)
-  } else {
-    updateMap(location.lat, location.lng)
-  }
+  setMap(location.lat, location.lng);
   loader.style.display = "none";
-}
+};
 
+// TODO: Look to refactor api calls to single function & dry code
+// FETCH USER IP ON PAGE LOAD
+async function fetchUserIP() {
+  const apiUrl = 'https://api.ipify.org/?format=json'
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return data.ip;
+};
 
-async function findLocation(query = null) {
+// FETCH LOCATION DATA BASED ON USER SEARCH
+async function fetchIPLocData(ip, callback) {
+  const apiUrl = `https://geo.ipify.org/api/v1?apiKey=${apiKey}&domain=${ip}`;
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  callback(data)
+};
+
+async function findLocation(ipAddress = null) {
   loader.style.display = "block";
-  const initialLoad = query ? false : true;
-  const ipAddress = query ? query : await fetchUserIP();
 
-  if (query) {
-    fetchIPLocData(ipAddress, updateDisplayWithResponse, initialLoad);
-  } else {
-    fetchIPLocData(ipAddress, updateDisplayWithResponse, initialLoad);
+  if(!ipAddress) {
+    ipAddress = await fetchUserIP();
   }
-}
+  fetchIPLocData(ipAddress, updateDisplayWithResponse);
+};
 
 findLocation();
