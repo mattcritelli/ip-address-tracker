@@ -1,4 +1,5 @@
 import { setMap } from './map.js';
+const apiKey = 'at_unDaWA0vh2ru7g4JKSPUZ63f4EFGN';
 
 // DOM SELECTORS
 const ipEl = document.querySelector('#ip-address');
@@ -17,7 +18,7 @@ searchBtn.addEventListener('click', function (e) {
 // UPDATE UI WITH API RESPONSE
 function updateDisplayWithResponse({ location, isp, ip }) {
   ipEl.innerText = ip;
-  locationEl.innerText = `${location.city}, ${location.region} ${location.postalCode} `;
+  locationEl.innerText = `${location.city}, ${location.region} ${location.postalCode}`;
   timezoneEl.innerText = `${location.timezone} UTC`;
   ispEl.innerText = isp;
 

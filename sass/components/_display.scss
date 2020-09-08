@@ -3,18 +3,38 @@
   max-width: 111rem;
   background-color: $color-white;
   border-radius: 20px;
-  height: 16.1rem;
-  margin: 4rem auto;
   display: flex;
   padding: 3rem;
   box-shadow: 0 0.5rem 2rem rgba($color-black, 0.1);
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  @include respond(tab-land) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    top: 17%;
+  }
 
   &__box {
     flex: 0 1 25%;
 
+    @include respond(tab-land) {
+      text-align: center;
+      flex: 1 1 25%;
+    }
+
     &:not(:first-child) {
-      padding-left: 3rem;
+      padding: 0 3rem 0 3rem;
       border-left: 1px solid #DADADA;
+
+      @include respond(tab-land) {
+        border: none;
+        padding: 1.5rem 0 0 0;
+      }
     }
   }
 

@@ -1,4 +1,7 @@
+const mapToken = 'pk.eyJ1IjoibWF0dDE2NzY5OCIsImEiOiJja2VxN3pvbzMwc3Q5MnduaTgwYXE4ODZxIn0.5nE6LGA6Ri3J7l4B0W2A-Q';
 var mymap = null;
+
+var locationIcon = L.icon({ iconUrl: '../images/icon-location.svg' });
 
 // Set map based with either user IP or search query
 function setMap(lat, lng) {
@@ -15,6 +18,7 @@ function setMap(lat, lng) {
   } else {
     mymap.setView([lat, lng], 13);
   }
+  L.marker([lat, lng], {icon: locationIcon}).addTo(mymap);
 }
 
 export { setMap }
